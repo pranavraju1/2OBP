@@ -1,5 +1,4 @@
 import axios from "axios";
-import dotenv from 'dotenv'
 
 const upload = async(file) => {
     const data = new FormData();
@@ -9,8 +8,8 @@ const upload = async(file) => {
     data.append("upload_preset", "mern-test")
 
     try{
-        // dyb8gufr0 is my cloude name please specify yours from cloudinary
-        const res = await axios.post("https://api.cloudinary.com/v1_1/dyb8gufr0/image/upload", data);
+        // mention your cloud name here
+        const res = await axios.post("https://api.cloudinary.com/v1_1/<your cloud name>/image/upload", data);
         const {url} = res.data;
         return url;
 
